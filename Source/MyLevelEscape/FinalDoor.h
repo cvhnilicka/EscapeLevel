@@ -38,6 +38,9 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere)
+		float TriggerMass = 3.f;
+
+	UPROPERTY(EditAnywhere)
 		ATriggerVolume* Room1 = nullptr;  // for type checking to prevent crashes
 
 	UPROPERTY(EditAnywhere)
@@ -51,5 +54,10 @@ private:
 		
 
 	AActor* Owner;
+
+	// Function to get the total mass of the actors on the pressure plate
+	float GetTotalMassOfActorsOnPlate(ATriggerVolume* plate);
+
+	bool isopen = false;
 
 };
